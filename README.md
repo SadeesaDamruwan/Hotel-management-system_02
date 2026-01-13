@@ -1,244 +1,199 @@
-# Hotel Management System - Professional Enterprise Application
+# 🏨 Hotel Management System
 
-A comprehensive hotel management solution built with Java Swing and MongoDB, featuring role-based authentication, modern UI/UX design, and complete administrative tools for managing staff, rooms, pricing, and financial reporting. This enterprise-grade application provides separate dashboards for administrators and receptionists, with secure database integration and professional-grade styling.
+<div align="center">
 
-## 🏗️ Project Structure
+![Java](https://img.shields.io/badge/Java-17+-007396?style=flat-square&logo=java&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4.11.1-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![JavaFX](https://img.shields.io/badge/JavaFX-17.0.2-orange?style=flat-square)
+![Maven](https://img.shields.io/badge/Maven-3.8+-C71A36?style=flat-square&logo=apache-maven&logoColor=white)
 
-```
-hotel-management-system/
-├── pom.xml                                 
-├── .env                                    
-├── lib/                                    
-├── src/
-│   ├── main/
-│   │   ├── java/com/hotel/management/
-│   │   │   ├── Main.java                   
-│   │   │   ├── UserCreationScript.java     
-│   │   │   ├── database/                   
-│   │   │   │   └── DatabaseConnection.java
-│   │   │   ├── model/                      
-│   │   │   │   ├── User.java              
-│   │   │   │   ├── Guest.java
-│   │   │   │   ├── GuestActivity.java
-│   │   │   │   ├── FinancialRecord.java
-│   │   │   │   ├── Receptionist.java
-│   │   │   │   └── ReceptionistStaff.java
-│   │   │   ├── service/                   
-│   │   │   │   ├── UserService.java        
-│   │   │   │   ├── GuestActivityManagement.java
-│   │   │   │   └── ReceptionistStaffManagement.java
-│   │   │   └── view/                      
-│   │   │       ├── LoginSelectionFrame.java
-│   │   │       ├── admin/                  
-│   │   │       │   ├── AdminLoginFrame.java
-│   │   │       │   ├── AdminDashboardFrame.java
-│   │   │       │   ├── AdminSettingsPanel.java
-│   │   │       │   ├── AddStaffPanel.java
-│   │   │       │   ├── RemoveStaffPanel.java
-│   │   │       │   ├── ViewStaffPanel.java
-│   │   │       │   ├── AddRoomPanel.java
-│   │   │       │   ├── PriceAdjustmentPanel.java
-│   │   │       │   ├── FinancePanel.java
-│   │   │       │   ├── ViewReportsPanel.java
-│   │   │       │   ├── DailyReportTablePanel.java
-│   │   │       │   └── GuestActivityPanel.java
-│   │   │       ├── receptionist/           
-│   │   │       │   ├── ReceptionistLoginFrame.java
-│   │   │       │   ├── ReceptionistDashboardFrame.java
-│   │   │       │   ├── ReceptionistPanel.java
-│   │   │       │   ├── Receptionistcheckins.java
-│   │   │       │   └── ReceptionistCheckouts.java
-│   │   │       └── components/             
-## 🚀 How to Run
+**A professional desktop application for managing hotel operations with role-based access control, payment integration, and automated workflows.**
 
-### Prerequisites
+</div>
 
-1. **MongoDB** must be installed and running locally on port `27017`
-2. **Java 17+** installed
-3. **Maven** installed (or use IntelliJ's built-in Maven)
 
-### Initial Setup
+## 🌟 Overview
 
-1. **Configure MongoDB Connection**:
-   - Create/edit `.env` file in project root:
-   ```env
-   MONGODB_URI=mongodb://localhost:27017
-   MONGODB_DATABASE=hotel_management_db
-   ```
+The **Hotel Management System** is a comprehensive desktop application built with Java Swing and MongoDB, designed to streamline hotel operations including guest management, room booking, payment processing, staff management, and financial reporting. The system features separate dashboards for administrators and receptionists with secure role-based authentication.
 
-2. **Create Users** (First Time Only):
-   ```powershell
+### Key Highlights
 
-   mvn compile exec:java -Dexec.mainClass="com.hotel.management.UserCreationScript"
-
-## 🔑 Login Credentials
-
-**Important**: Login credentials are now stored securely in MongoDB.
-**Default Users** (if created via script):
-- **Admin**: Create via script with role "admin"
-- **Receptionist**: Create via script with role "receptionist"
-
-Users are authenticated against MongoDB with hashed passwords. on `Main.java` → **Run 'Main.main()'**
-## 🚀 How to Run
-
-### Option 1: Using IntelliJ IDEA (Recommended)
-
-1. **Open the project** in IntelliJ IDEA
-2. IntelliJ will automatically detect the `pom.xml` and configure as Maven project
-3. Wait for Maven to download dependencies (JCalendar)
-4. **Right-click** on `Main.java` → **Run 'Main.main()'**
-
-## 📦 Dependencies
-
-- **Java**: 17+
-- **MongoDB Driver**: 4.11.1 (database connectivity)
-- **Dotenv Java**: 3.0.0 (environment variable management)
-- **JCalendar**: 1.4 (date picker component)
-
-## 🎯 Features
-
-### Authentication & Security
-- **MongoDB Integration**: Secure user authentication with database persistence
-- **Role-Based Access**: Separate admin and receptionist roles
-- **User Management**: CLI script for creating and managing users
-
-### Admin Dashboard
-- **Professional Sidebar**: Gradient backgrounds, smooth navigation, collapsible menus
-- **Staff Management**: Add, remove, and view staff with department/role filtering
-- **Room Management**: Update room status with custom styled dropdowns
-- **Price Adjustment**: Seasonal pricing controls with date pickers
-- **Finance Tracking**: Revenue reports and financial metrics
-- **View Reports**: Occupancy rates, revenue analytics, staff efficiency
-- **Settings Panel**: User profile management
-
-### Receptionist Dashboard
-- **Guest Check-ins/Check-outs**: Streamlined guest management
-- **Room Availability**: Real-time room status tracking
-- **Guest Activity**: Monitor guest interactions and services
-
-### UI/UX Enhancements
-- **Modern Dark Theme**: Gold (#FFB43C) accent on dark backgrounds
-- **Custom Calendar Components**: Interactive date pickers with month navigation
-- **Styled Dropdowns**: White backgrounds with black text, gold selection highlights
-- **Responsive Design**: Professional gradient effects, shadows, and borders
-- **Navigation State Tracking**: Visual feedback for current selection
-
-### Technical Features
-- **MVC Architecture**: Clean separation of models, services, and views
-- **Maven Build System**: Automated dependency management
-## 🔧 Development
-
-### IntelliJ Setup
-
-1. **File → Project Structure**
-   - Project SDK: Java 17
-   - Language Level: 17
-2. **Mark directories**:
-   - `src/main/java` → Sources
-   - `src/main/resources` → Resources
-   - `src/test/java` → Test Sources
-3. **Configure .env file**:
-   - Create `.env` in project root
-   - Add MongoDB connection details
-
-### Building
-
-```powershell
-# Compile only
-mvn compile
-
-# Run user creation script
-mvn compile exec:java -Dexec.mainClass="com.hotel.management.UserCreationScript"
-
-# Package as JAR with dependencies
-## 📝 Notes
-
-- Old source files remain in `src/` directory for backup
-- New structure is in `src/main/java/com/hotel/management/`
-- All image paths updated from `/Rescources/` to `/images/`
-- Maven handles all dependencies automatically
-- MongoDB must be running before starting the application
-- User passwords are hashed before storage in database
-
-## 🎨 Recent Updates
-
-### Database & Authentication (December 2025)
-✅ **MongoDB Integration**: Complete authentication system with secure database storage  
-✅ **User Service**: UserService.java with authentication, user creation, and management  
-✅ **Environment Configuration**: .env file for flexible database configuration  
-✅ **User Creation Tool**: Interactive CLI script for creating admin/receptionist accounts  
-✅ **Login Screens Updated**: Both admin and receptionist logins now authenticate against MongoDB  
-
-### UI/UX Improvements (December 2025)
-✅ **Professional Sidebar**: Gradient backgrounds, navigation state tracking, auto-collapsing dropdowns  
-✅ **Dropdown Visibility Fix**: All combobox dropdowns now show black text on white background  
-✅ **Calendar Components**: Custom date pickers with month navigation in all panels  
-✅ **Settings Panel**: AdminSettingsPanel with proper text field selection colors  
-✅ **View Reports Panel**: Multi-tab reporting interface with filters and metrics  
-✅ **Consistent Styling**: Gold accent color (#FFB43C) across all components  
-
-### Architecture Enhancements
-✅ **Professional package structure** (`com.hotel.management.*`)  
-✅ **Maven build system** (pom.xml)  
-✅ **MVC Pattern**: Proper separation of model, service, and view layers  
-✅ **Singleton Database Connection**: Efficient connection pooling  
-✅ **Resource management** (`src/main/resources`)  
-✅ **Automated dependency management**  
-
-## 🛠️ Troubleshooting
-
-### MongoDB Connection Issues
-- Ensure MongoDB is running: `net start MongoDB`
-- Check `.env` file has correct connection string
-- Verify MongoDB is listening on port 27017
-
-### Login Issues
-- Run `UserCreationScript.java` to create users
-- Verify users exist in MongoDB: `db.users.find()`
-- Check role matches ("admin" or "receptionist")
-
-### Dropdown Visibility Issues
-- All dropdowns fixed to show black text on white background
-- If issues persist, verify Java version is 17+
+- **Role-Based Access Control** - Separate dashboards for Admin and Receptionist roles
+- **Payment Integration** - PayHere payment gateway for secure online transactions
+- **Automated Workflows** - Email confirmations, PDF receipts, and room status automation
+- **Real-Time Monitoring** - Live room status tracking and booking analytics
+- **Professional UI/UX** - Modern Swing interface with custom components
 
 ---
 
-**Version**: 2.0.0  
-**Last Updated**: December 3, 2025
-2. **Create Database** (automatic on first run):
-   - Database: `hotel_management_db`
-   - Collection: `users`
 
-3. **Create Users**:
-   ```powershell
-   mvn compile exec:java -Dexec.mainClass="com.hotel.management.UserCreationScript"
-   ```
-- **Admin Dashboard**: Staff management, room status, pricing, finance tracking
-- **Receptionist Dashboard**: Check-ins, check-outs, guest management
-- **Modern UI**: Custom Swing components with dark theme
-- **Professional Structure**: Proper package organization following MVC pattern
+## 📁 Project Structure
 
-## 🔧 Development
-
-### IntelliJ Setup
-
-1. **File → Project Structure**
-   - Project SDK: Java 17
-   - Language Level: 17
-2. **Mark directories**:
-   - `src/main/java` → Sources
-   - `src/main/resources` → Resources
-   - `src/test/java` → Test Sources
-
-### Building
-
-```powershell
-# Compile only
-mvn compile
-
-# Package as JAR with dependencies
-mvn clean package
-
-# Skip tests (when added)
-mvn package -DskipTests
 ```
+hotel-management-system/
+├── src/main/java/com/hotel/management/
+│   ├── Main.java                    # Application entry point
+│   ├── model/                       # Data models (User, Guest, Room, Booking, etc.)
+│   ├── service/                     # Business logic services
+│   │   ├── UserService.java
+│   │   ├── RoomService.java
+│   │   ├── PayHereService.java
+│   │   ├── EmailService.java
+│   │   └── ...
+│   ├── view/                        # UI components
+│   │   ├── admin/                   # Admin dashboard panels
+│   │   ├── receptionist/            # Receptionist dashboard panels
+│   │   └── components/              # Reusable UI components
+│   └── util/                        # Utility classes
+│       ├── DatabaseConnection.java
+│       ├── ReceiptPDFGenerator.java
+│       └── UserCreationScript.java
+├── src/main/resources/
+│   └── images/                      # Application images
+├── pom.xml                          # Maven configuration
+└── .env                             # Environment variables
+```
+
+
+## ✨ Features
+
+### Admin Dashboard
+- **Staff Management** - Add, view, edit, and remove staff members with role assignments
+- **Room Management** - Manage rooms with dynamic pricing, capacity, and real-time status tracking
+- **Financial Reports** - Comprehensive revenue tracking with daily/monthly reports and PDF export
+- **Guest Activity** - Monitor all check-ins/check-outs with detailed activity logs
+- **Support Tickets** - View and manage guest support requests with status tracking
+
+### Receptionist Dashboard
+- **Guest Check-In/Out** - Quick booking process with guest profile management
+- **Payment Processing** - PayHere payment gateway integration with multiple payment methods
+- **Room Status** - Real-time room availability and status updates
+- **PDF Invoices** - Automated receipt and invoice generation
+- **Email Notifications** - Automated booking confirmations with PDF attachments
+
+### Technical Features
+- **Security** - Role-based authentication with encrypted passwords
+- **Database** - MongoDB for flexible data storage
+- **Email Service** - Gmail SMTP integration for automated communications
+- **Modern UI** - Professional Swing interface with custom components and animations
+
+---
+
+## 🛠 Technology Stack
+
+- **Java 17+** - Core programming language
+- **Maven** - Dependency management and build automation
+- **Java Swing** - Desktop UI framework
+- **JavaFX 17.0.2** - WebView for payment integration
+- **MongoDB 4.11.1** - NoSQL database
+- **PayHere API** - Payment gateway integration
+- **Apache PDFBox 2.0.29** - PDF generation
+- **Jakarta Mail** - Email service (Gmail SMTP)
+- **JCalendar 1.4** - Date picker component
+- **Dotenv Java 3.0.0** - Environment configuration
+
+---
+
+## 📦 Installation
+
+### Prerequisites
+
+- **Java JDK 17+** - [Download here](https://www.oracle.com/java/technologies/downloads/)
+- **Maven 3.8+** - [Download here](https://maven.apache.org/download.cgi)
+- **MongoDB** - [Download here](https://www.mongodb.com/try/download/community)
+
+
+### Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/hotel-management-system.git
+   cd hotel-management-system
+   ```
+
+2. **Configure environment variables**  
+   Create a `.env` file in the project root
+
+3. **Install dependencies**
+   ```bash
+   mvn clean install
+   ```
+
+4. **Create initial users**
+   ```bash
+   mvn exec:java -Dexec.mainClass="com.hotel.management.util.UserCreationScript"
+   ```
+
+5. **Run the application**
+   ```bash
+   mvn exec:java -Dexec.mainClass="com.hotel.management.Main"
+   ```
+---
+
+## ⚙️ Configuration
+
+### Database Collections
+
+The application automatically creates these MongoDB collections:
+- `users` - User authentication and roles
+- `rooms` - Room inventory and status
+- `guests` - Guest profiles and information
+- `bookings` - Booking records and history
+- `staff` - Staff member details
+- `financialRecords` - Revenue and payment tracking
+- `tickets` - Support ticket system
+
+### PayHere Setup
+
+1. Sign up at [PayHere](https://www.payhere.lk/)
+2. Get your Merchant ID and Secret from the dashboard
+3. Set `PAYHERE_SANDBOX_MODE=true` for testing
+4. Set `PAYHERE_SANDBOX_MODE=false` for production
+
+### Email Setup
+
+1. Enable 2-Step Verification in your Google Account
+2. Generate an [App Password](https://support.google.com/accounts/answer/185833) for Mail
+3. Use the app password in your `.env` file
+
+---
+
+## 📖 Usage
+
+### Login
+
+1. Run the application and select your role (Admin or Receptionist)
+2. Enter your credentials created during the setup
+
+### Admin Functions
+
+- **Manage Rooms**: Add rooms, adjust pricing, monitor status
+- **Manage Staff**: Add/remove staff, assign cleaning tasks
+- **View Reports**: Generate financial reports and export as PDF
+- **Monitor Activity**: Track guest check-ins/check-outs
+
+### Receptionist Functions
+
+- **Check-In**: Select room, enter guest details, process payment
+- **Check-Out**: Review billing, complete checkout, email invoice
+- **Room Status**: View availability, update room status
+- **Support Tickets**: Create tickets for guest issues
+
+---
+
+## 🙏 Acknowledgments
+
+- MongoDB for the flexible database solution
+- PayHere for payment gateway integration
+- Apache PDFBox for PDF generation
+- Open Source Community for continuous support
+
+## 📮 Support
+
+**📧 Email:** [k.b.ravindusankalpaac@gmail.com](mailto:k.b.ravindusankalpaac@gmail.com)  
+**🐞 Bug Reports:** [GitHub Issues](https://github.com/K-B-R-S-W/Hotel_Management_System/issues)   
+**💭 Discussions:** [GitHub Discussions](https://github.com/K-B-R-S-W/Hotel_Management_System/discussions)  
+
+## ⭐ Support This Project
+
+If you find this project helpful, please give it a **⭐ star** on GitHub — it motivates me to keep improving! 🚀
